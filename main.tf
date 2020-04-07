@@ -13,6 +13,11 @@ resource "null_resource" "local_run" {
     }
 }
 
+provider "aws" {
+  profile = "default"
+  region  = "ap-southeast-1"
+}
+
 resource "aws_s3_bucket" "covid19webhook" {
   bucket = "covid19webhook"
   acl    = "private"
